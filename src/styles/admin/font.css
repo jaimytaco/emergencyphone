@@ -1,0 +1,17 @@
+@font-face {
+    font-family: GoogleSans-Bold;
+    src: url(/fonts/google-sans/GoogleSans-Bold.ttf) format('truetype');
+    display: swap;
+}
+
+@font-face {
+    font-family: GoogleSans-Medium;
+    src: url(/fonts/google-sans/GoogleSans-Medium.ttf) format('truetype');
+    display: swap;
+}
+
+@font-face {
+    font-family: GoogleSans-Regular;
+    src: url(/fonts/google-sans/GoogleSans-Regular.ttf) format('truetype');
+    display: swap;
+}

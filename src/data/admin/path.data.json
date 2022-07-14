@@ -1,0 +1,56 @@
+[
+    {
+        "page": "orders",
+        "icon": "order",
+        "nameSingular": "orden",
+        "namePlural": "órdenes"
+    },
+    {
+        "page": "clients",
+        "icon": "client",
+        "nameSingular": "cliente",
+        "namePlural": "clientes"
+    },
+    {
+        "page": "sales",
+        "icon": "sale",
+        "nameSingular": "venta",
+        "namePlural": "ventas"
+    },
+    {
+        "page": "inventories",
+        "icon": "inventory",
+        "nameSingular": "inventario",
+        "namePlural": "inventarios"
+    },
+    {
+        "page": "repairs",
+        "icon": "repair",
+        "nameSingular": "en reparación",
+        "namePlural": "en reparación"
+    },
+    {
+        "page": "users",
+        "icon": "user",
+        "nameSingular": "usuario",
+        "namePlural": "usuarios"
+    },
+    {
+        "page": "purchases",
+        "icon": "purchase",
+        "nameSingular": "compra",
+        "namePlural": "compras"
+    },
+    {
+        "page": "providers",
+        "icon": "provider",
+        "nameSingular": "proveedor",
+        "namePlural": "proveedores"
+    },
+    {
+        "page": "reports",
+        "icon": "report",
+        "nameSingular": "reporte",
+        "namePlural": "reportes"
+    }
+]

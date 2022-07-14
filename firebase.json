@@ -1,0 +1,45 @@
+{
+  "hosting": [
+    {
+      "public": "dist",
+      "target": "prod",
+      "ignore": [
+        "firebase.json",
+        "**/.*",
+        "**/node_modules/**"
+      ]
+    },
+    {
+      "public": "dist",
+      "target": "dev",
+      "ignore": [
+        "firebase.json",
+        "**/.*",
+        "**/node_modules/**"
+      ]
+    },
+    {
+      "public": "dist",
+      "target": "qa",
+      "ignore": [
+        "firebase.json",
+        "**/.*",
+        "**/node_modules/**"
+      ],
+      "rewrites": [
+        {
+          "source": "/admin/layout",
+          "destination": "/admin/layout.html"
+        },
+        {
+          "source": "/admin/orders",
+          "destination": "/admin/orders.html"
+        },
+        {
+          "source": "/admin/sales",
+          "destination": "/admin/sales.html"
+        }
+      ]
+    }
+  ]
+}

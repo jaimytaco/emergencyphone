@@ -1,0 +1,53 @@
+[
+    {
+        "client": "Carlos Orozco",
+        "code": "VENT-001",
+        "payment": {
+            "type": "al contado",
+            "subtotal": 100,
+            "tax": 18,
+            "discount": 0,
+            "total": 118,
+            "coin": {
+                "symbol": "€",
+                "name": "euro"
+            }
+        },
+        "saler": "Jadir Tejada",
+        "createdAt": "10/02/2022"
+    },
+    {
+        "client": "Henry Spencer",
+        "code": "VENT-002",
+        "payment": {
+            "type": "con tarjeta",
+            "subtotal": 1000,
+            "tax": 180,
+            "discount": 0,
+            "total": 1180,
+            "coin": {
+                "symbol": "€",
+                "name": "euro"
+            }
+        },
+        "saler": "Fabian Delgado",
+        "createdAt": "11/11/2022"
+    },
+    {
+        "client": "Carlos Carlín",
+        "code": "VENT-003",
+        "payment": {
+            "type": "con QR",
+            "subtotal": 2000,
+            "tax": 360,
+            "discount": 0,
+            "total": 2360,
+            "coin": {
+                "symbol": "€",
+                "name": "euro"
+            }
+        },
+        "saler": "Daniel",
+        "createdAt": "21/08/2022"
+    }
+]

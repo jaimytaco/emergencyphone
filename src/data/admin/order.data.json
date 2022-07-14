@@ -1,0 +1,47 @@
+[
+    {
+        "client": "Jaimy Taco",
+        "code": "ORD-001",
+        "products": [
+            "Iphone XR 128GB - Apple"
+        ],
+        "status": "registrado",
+        "technician": "Daniel Tejada"
+    },
+    {
+        "client": "Angie Tejada",
+        "code": "ORD-002",
+        "products": [
+            "Pixel 5 - Google"
+        ],
+        "status": "en reparación",
+        "technician": "Gino Tejada"
+    },
+    {
+        "client": "Jesús Alzamora",
+        "code": "ORD-003",
+        "products": [
+            "Playstation 5 - Sony"
+        ],
+        "status": "entregado",
+        "technician": "Fabián Delgado"
+    },
+    {
+        "client": "Ricardo Mendoza",
+        "code": "ORD-004",
+        "products": [
+            "Redmi Note 11 - Xiaomi"
+        ],
+        "status": "en reparación",
+        "technician": "Daniel Tejada"
+    },
+    {
+        "client": "Jorge Luna",
+        "code": "ORD-005",
+        "products": [
+            "Galaxy Note 10 - Samsung"
+        ],
+        "status": "en reparación",
+        "technician": "Roberto Martinez"
+    }
+]

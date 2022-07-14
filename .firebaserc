@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "default": "emergencyphone-11968"
+  },
+  "targets": {
+    "emergencyphone-11968": {
+      "hosting": {
+        "qa": [
+          "qa-emergencyphone-11968"
+        ]
+      }
+    }
+  }
+}
