@@ -58,4 +58,4 @@ addEventListener('fetch', (e) => {
     e.respondWith(onFetch(e))
 })
 
-export const SW_VERSION = 41
+export const SW_VERSION = 51

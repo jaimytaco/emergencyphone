@@ -43,6 +43,5 @@ export const styles = [
 ]
 
 export const routes = [
-    '/admin/orders',
-    '/admin/sales'
+    '/admin/layout'
 ]

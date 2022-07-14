@@ -14,9 +14,9 @@ import {
     supportsIndexedDB,
 } from '@wf/helpers/browser.helper'
 
-// import { 
-//     AUI 
-// } from './actors/ui.actor'
+import { 
+    AUI 
+} from '@wf/actors/ui.actor'
 
 import { 
     ADatabase 
@@ -97,10 +97,10 @@ export const getHTML = async ({ ui, pathname, viewId }) => {
     const { content, err } = await getContent({ ui, pathname, viewId })
     if (err) return { err }
 
-    const blankResponse = await fetch(getBlankPathname())
-    const blankText = await blankResponse.text()
+    const layoutResponse = await fetch(getLayoutPathname())
+    const layoutText = await layoutResponse.text()
 
-    const html = blankText
+    const html = layoutText
         .replace(getTitleTag(), content.head.title)
         .replace(getMetaTag(), content.head.meta)
         .replace(getBodyTag(), content.body)
@@ -110,7 +110,12 @@ export const getHTML = async ({ ui, pathname, viewId }) => {
 
 export const cacheDynamically = async ({ ui, cacheName, url, pattern }) => {
     const { pathname } = url
-    if (!isDynamicPathname({ ui, url, pattern })) return
+    const isDynamic = isDynamicPathname({ ui, url, pattern })
+    console.log('--- ui =', ui)
+    console.log('--- url =', url)
+    console.log('--- pattern =', pattern)
+    console.log('--- isDynamic =', isDynamic)
+    if (!isDynamic) return
     const { html, err } = await getHTML({ ui, pathname })
     if (err) return { err }
 
@@ -129,12 +134,12 @@ export const cacheDynamically = async ({ ui, cacheName, url, pattern }) => {
 //     const { content, err } = await AUI.getDynamicContent({ lib: wf, builders: generator, viewId })
 //     if (err) return { err }
 
-//     const blankResponse = await fetch(getBlankPathname())
-//     const blankText = await blankResponse.text()
+//     const layoutResponse = await fetch(getLayoutPathname())
+//     const layoutText = await layoutResponse.text()
 
 //     const htmls = content
 //         .map((contentItem) => {
-//             return blankText
+//             return layoutText
 //                 .replace(getTitleTag(), contentItem.head.title)
 //                 .replace(getMetaTag(), contentItem.head.meta)
 //                 .replace(getBodyTag(), contentItem.body)
@@ -143,13 +148,14 @@ export const cacheDynamically = async ({ ui, cacheName, url, pattern }) => {
 //     return { htmls }
 // }
 
-// const getBlankPathname = () => '/admin/blank'
+const getLayoutPathname = () => '/admin/layout'
 
-export const getTitleTag = () => '<!-- [TITLE] -->'
+export const getTitleTag = () => '[TITLE]'
 export const getMetaTag = () => '<!-- [META] -->'
 export const getBodyTag = () => '<!-- [BODY] -->'
 
-const testPattern = (url, pattern) => (new URLPattern({ pathname: pattern })).test(url.href)
+// const testPattern = (url, pattern) => (new URLPattern({ pathname: pattern })).test(url.href)
+const testPattern = (url, pattern) => pattern.test(url.href)
 
 const isDynamicPathname = ({ ui, url, pattern }) => {
     if (pattern) return testPattern(url, pattern)
