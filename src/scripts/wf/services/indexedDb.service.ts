@@ -29,7 +29,7 @@ const getObjetcStore = (transaction: IDBPTransaction<unknown, string[], 'version
     try {
         return transaction.objectStore(storeName);
     } catch (e) {
-        return null;
+        return null; 
     }
 }
 
