@@ -61,6 +61,20 @@ const get = async (collectionName, id) => {
     }
 }
 
+// TODO: Untested
+const getWithTransaction = async (docRef, callback) => {
+    try {
+        const doc = await runTransaction(firestore, (transaction) => callback(transaction, docRef))
+        const data = {
+            id: doc.id,
+            ...formatDoc(doc.data())
+        }
+        return { data }
+    } catch (err) {
+        return { err }
+    }
+}
+
 const update = async (collectionName, docData) => {
     const { id, ...data } = docData
     const docRef = doc(firestore, collectionName, id)
@@ -72,6 +86,18 @@ const update = async (collectionName, docData) => {
                 ...data
             }
         }
+    } catch (err) {
+        return { err }
+    }
+}
+
+// TODO: Untested
+const updateWithTransaction = async (collectionName, docData, callback) => {
+    const { id, ...data } = docData
+    const docRef = doc(firestore, collectionName, id)
+    try {
+        const dataUpdated = await runTransaction(firestore, (transaction) => callback(transaction, docRef, formatDocForFirebase(data)))
+        return { data: dataUpdated }
     } catch (err) {
         return { err }
     }
@@ -111,7 +137,6 @@ const formatDocForFirebase = (data) => {
             data[key] = dateToTimestamp(data[key])
     return data
 }
-
 
 export default {
     getAll,
