@@ -18,7 +18,7 @@ import {
     sendMessage
 } from '@wf/helpers/sw.helper'
 
-import networkDB from '@wf/services/firebase.service'
+import networkDB from '@wf/services/firebase.firestore.service'
 import offlineDB from '@wf/services/indexedDb.service'
 
 const onInstall = (e) => {

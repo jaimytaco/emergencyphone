@@ -112,6 +112,7 @@ const formatDocForFirebase = (data) => {
     return data
 }
 
+
 export default {
     getAll,
     update,

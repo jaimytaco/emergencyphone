@@ -64,7 +64,7 @@ export const initApp = async () => {
         wf
     } = await import('@wf/lib.worker')
 
-    const { default: networkDB } = await import('@wf/services/firebase.service')
+    const { default: networkDB } = await import('@wf/services/firebase.firestore.service')
     const { default: offlineDB } = await import('@wf/services/indexedDb.service')
 
     await registerNetworkDB(networkDB)
