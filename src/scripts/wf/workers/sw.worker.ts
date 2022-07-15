@@ -1,4 +1,5 @@
 import { app } from '@helpers/app.helper'
+import { DB_CREDENTIALS } from '@helpers/database.helper'
 
 import {
     registerNetworkDB,
@@ -22,7 +23,7 @@ import networkDB from '@wf/services/firebase.firestore.service'
 import offlineDB from '@wf/services/indexedDb.service'
 
 const onInstall = (e) => {
-    registerNetworkDB(networkDB)
+    registerNetworkDB(networkDB, DB_CREDENTIALS)
     registerOfflineDB(offlineDB, app.code, app.loaders)
 
     cacheStatic(e, getCacheName(`sw-${app.code}`, SW_VERSION), app.sw.static)
@@ -58,4 +59,4 @@ addEventListener('fetch', (e) => {
     e.respondWith(onFetch(e))
 })
 
-export const SW_VERSION = 51
+export const SW_VERSION = 52

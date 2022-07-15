@@ -5,11 +5,16 @@ export const fonts = [
 ]
 
 export const scripts = [
-    '/browser.helper.js',
-    '/dialog.component.js',
+    '/assets/database.worker.00aa4224.js',
+    '/sw.worker.js',
+    '/lib.worker.js',
     '/hoisted.js',
+    '/database.enum.js',
+    '/browser.helper.js',
+    '/indexedDb.service.js',
+    '/dialog.component.js',
     '/pwa.actor.js',
-    '/util.helper.js'
+    '/firebase.firestore.service.js',
 ]
 
 export const images = [

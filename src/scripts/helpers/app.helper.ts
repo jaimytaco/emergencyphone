@@ -52,6 +52,7 @@ export const initApp = async () => {
     const { getBodyPage } = await import('@helpers/util.helper')
     const { default: CDialog } = await import('@components/dialog.component')
     const { configCreateOrderDialog } = await import('@helpers/util.helper')
+    const { DB_CREDENTIALS } = await import('@helpers/database.helper')
 
     const { registerSW } = await import('@wf/actors/pwa.actor')
 
@@ -67,7 +68,7 @@ export const initApp = async () => {
     const { default: networkDB } = await import('@wf/services/firebase.firestore.service')
     const { default: offlineDB } = await import('@wf/services/indexedDb.service')
 
-    await registerNetworkDB(networkDB)
+    await registerNetworkDB(networkDB, DB_CREDENTIALS)
     await registerOfflineDB(offlineDB, app.code, app.loaders)
     
     const { isServiceWorkerRunning } = await import('@wf/helpers/browser.helper')

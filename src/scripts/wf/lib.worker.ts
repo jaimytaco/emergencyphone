@@ -48,10 +48,11 @@ const formatDB = (db) => {
     return db
 }
 
-export const registerNetworkDB = async (networkDB: T) => {
+export const registerNetworkDB = async (networkDB: T, credentials) => {
     if (!wf?.database) wf.database = await formatDatabaseActor()
 
     await wf.database.setNetworkDB(formatDB(networkDB))
+    wf.database.register({ mode: EDatabaseMode.Network, credentials })
 }
 
 export const registerOfflineDB = async (offlineDB: T, prefix, loaders) => {
@@ -60,7 +61,7 @@ export const registerOfflineDB = async (offlineDB: T, prefix, loaders) => {
     await wf.database.setOfflineDB(formatDB(offlineDB))
     
     if (supportsIndexedDB()) {
-        const { isOfflineFirst, isFirstLoad } = await wf.database.register(EDatabaseMode.Offline, prefix, Object.keys(loaders))
+        const { isOfflineFirst, isFirstLoad } = await wf.database.register({ mode: EDatabaseMode.Offline, prefix, loaders: Object.keys(loaders) })
         wf.isOfflineFirst = isOfflineFirst
         wf.isFirstLoad = isFirstLoad
     }

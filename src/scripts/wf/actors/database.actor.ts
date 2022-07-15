@@ -15,7 +15,8 @@ const setNetworkDB = (db: T) => NetworkDB = db
 
 const setOfflineDB = (db: T) => OfflineDB = db
 
-const register = async (mode: string, prefix, loaders): Promise<void> | Promise<IOfflineDbInit> => {
+const register = async ({ mode, prefix, loaders, credentials }): Promise<void> | Promise<IOfflineDbInit> => {
+    if (mode === EDatabaseMode.Network) return NetworkDB.register(credentials)
     if (mode === EDatabaseMode.Offline) return OfflineDB.register(prefix, loaders)
 }
 
